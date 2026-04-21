@@ -10,7 +10,6 @@
   :root {
     --teal:        #0F6E56;
     --teal-light:  #E1F5EE;
-    --teal-dark:   #04342C;
     --teal-mid:    #1D9E75;
     --teal-200:    #5DCAA5;
     --amber:       #BA7517;
@@ -30,7 +29,6 @@
     :root {
       --teal:       #5DCAA5;
       --teal-light: #085041;
-      --teal-dark:  #9FE1CB;
       --amber:      #EF9F27;
       --amber-bg:   #3A2800;
       --bg:         #191C1B;
@@ -45,18 +43,13 @@
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg);
-    color: var(--text1);
-    min-height: 100vh;
-    padding-bottom: 48px;
-    font-size: 14px;
+    background: var(--bg); color: var(--text1);
+    min-height: 100vh; padding-bottom: 48px; font-size: 14px;
   }
 
   header {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 20px 12px;
-    display: flex; align-items: center; gap: 12px;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 14px 20px 12px; display: flex; align-items: center; gap: 12px;
   }
   .header-icon {
     width: 36px; height: 36px; border-radius: 10px;
@@ -83,16 +76,14 @@
     cursor: pointer; text-align: center;
     transition: border-color .15s, background .15s;
   }
-  .gen-btn .gen-name  { font-size: 12px; font-weight: 600; color: var(--text1); display: block; }
-  .gen-btn .gen-year  { font-size: 10px; color: var(--text3); display: block; margin-top: 1px; }
-  .gen-btn .gen-bte   { font-size: 14px; font-weight: 700; color: var(--teal); display: block; margin-top: 5px; }
+  .gen-btn .gen-name { font-size: 12px; font-weight: 600; color: var(--text1); display: block; }
+  .gen-btn .gen-year { font-size: 10px; color: var(--text3); display: block; margin-top: 1px; }
+  .gen-btn .gen-bte  { font-size: 14px; font-weight: 700; color: var(--teal); display: block; margin-top: 5px; }
   .gen-btn.active { background: var(--teal-light); border-color: var(--teal); }
   .gen-btn.active .gen-name { color: var(--teal); }
 
   /* Currency row */
-  .currency-row {
-    display: flex; align-items: center; gap: 10px;
-  }
+  .currency-row { display: flex; align-items: center; gap: 10px; }
   .currency-row label { font-size: 11px; font-weight: 500; color: var(--text2); white-space: nowrap; }
   .currency-row input {
     width: 68px; padding: 7px 10px; font-size: 16px; font-weight: 700;
@@ -114,8 +105,7 @@
     font-size: 15px; font-weight: 500;
     background: var(--surface); color: var(--text1);
     border: 1.5px solid var(--border); border-radius: var(--radius-sm);
-    transition: border-color .15s;
-    -webkit-appearance: none;
+    transition: border-color .15s; -webkit-appearance: none;
   }
   .input-wrap.has-prefix input { padding-left: 28px; }
   .input-wrap input:focus { outline: none; border-color: var(--teal); }
@@ -129,9 +119,8 @@
   }
 
   .warn-text {
-    font-size: 11px; color: var(--amber);
-    background: var(--amber-bg); border-radius: 5px;
-    padding: 3px 7px; margin-top: 2px; display: none;
+    font-size: 11px; color: var(--amber); background: var(--amber-bg);
+    border-radius: 5px; padding: 3px 7px; margin-top: 2px; display: none;
   }
 
   hr { border: none; border-top: 1px solid var(--border); margin: 20px 0 0; }
@@ -146,9 +135,8 @@
   .rp-value { font-size: 40px; font-weight: 700; color: var(--teal); line-height: 1; }
   .rp-unit  { font-size: 12px; color: var(--teal); opacity: .75; margin-top: 3px; }
   .rp-badge {
-    background: var(--teal); color: #fff;
-    font-size: 10px; font-weight: 700; letter-spacing: .08em;
-    padding: 5px 11px; border-radius: 20px; align-self: flex-start;
+    background: var(--teal); color: #fff; font-size: 10px; font-weight: 700;
+    letter-spacing: .08em; padding: 5px 11px; border-radius: 20px; align-self: flex-start;
   }
 
   .result-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -178,8 +166,7 @@
   .bd-group {
     padding: 6px 16px; background: var(--surface2);
     font-size: 10px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: .08em; color: var(--text3);
-    border-top: 1px solid var(--border);
+    letter-spacing: .08em; color: var(--text3); border-top: 1px solid var(--border);
   }
   .bd-row {
     display: flex; justify-content: space-between; align-items: center;
@@ -191,6 +178,22 @@
     color: var(--text1); margin-left: 12px; white-space: nowrap;
   }
   .bd-val.hi { color: var(--teal); }
+
+  /* Formula display blocks — like the image */
+  .formula-block {
+    margin: 0 16px 0;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-size: 13px;
+    font-family: var(--mono);
+    color: var(--text1);
+    border-top: 1px solid var(--border);
+  }
+  .formula-block + .bd-row,
+  .formula-block + .bd-group { border-top: none; }
+  .formula-spacer { height: 8px; border-top: 1px solid var(--border); }
 
   .bd-note {
     padding: 10px 16px 14px; font-size: 11px; color: var(--text3);
@@ -248,14 +251,14 @@
     <p class="section-label">Trip data</p>
     <div class="grid-2">
       <div class="field">
-        <label for="dist">Distance traveled</label>
+        <label for="dist">Distance (D)</label>
         <div class="input-wrap">
           <input type="number" id="dist" placeholder="0" min="0" step="0.1" inputmode="decimal" oninput="calc()">
           <span class="suffix">km</span>
         </div>
       </div>
       <div class="field">
-        <label for="ron">Gasoline RON</label>
+        <label for="ron">Gasoline RON (R)</label>
         <div class="input-wrap">
           <input type="number" id="ron" placeholder="95" min="85" max="110" step="1" inputmode="decimal" oninput="calc()">
           <span class="suffix">RON</span>
@@ -263,14 +266,14 @@
         <span class="warn-text" id="ron-warn"></span>
       </div>
       <div class="field">
-        <label for="fuel">Fuel consumed</label>
+        <label for="fuel">Fuel volume (F<sub>v</sub>)</label>
         <div class="input-wrap">
           <input type="number" id="fuel" placeholder="0" min="0" step="0.01" inputmode="decimal" oninput="calc()">
           <span class="suffix">L</span>
         </div>
       </div>
       <div class="field">
-        <label for="kwh">Battery energy used</label>
+        <label for="kwh">Battery energy (E<sub>b</sub>)</label>
         <div class="input-wrap">
           <input type="number" id="kwh" placeholder="0" min="0" step="0.01" inputmode="decimal" oninput="calc()">
           <span class="suffix">kWh</span>
@@ -284,7 +287,7 @@
     <p class="section-label">Cost inputs</p>
     <div class="grid-2">
       <div class="field">
-        <label for="pgas">Gasoline price</label>
+        <label for="pgas">Fuel price (C<sub>f</sub>)</label>
         <div class="input-wrap has-prefix">
           <span class="prefix" id="pfx-gas">₱</span>
           <input type="number" id="pgas" placeholder="0" min="0" step="0.01" inputmode="decimal" oninput="calc()">
@@ -292,7 +295,7 @@
         </div>
       </div>
       <div class="field">
-        <label for="pelec">Electricity price</label>
+        <label for="pelec">Electricity price (C<sub>e</sub>)</label>
         <div class="input-wrap has-prefix">
           <span class="prefix" id="pfx-elec">₱</span>
           <input type="number" id="pelec" placeholder="0" min="0" step="0.01" inputmode="decimal" oninput="calc()">
@@ -310,26 +313,27 @@
 
     <div class="result-primary">
       <div>
-        <div class="rp-label">Combined fuel economy</div>
+        <div class="rp-label">Combined fuel economy (E<sub>c</sub>)</div>
         <div class="rp-value" id="out-fe">—</div>
-        <div class="rp-unit">km / L equivalent</div>
+        <div class="rp-unit">km / L</div>
       </div>
       <div class="rp-badge" id="gen-badge">DM-i 5.0</div>
     </div>
 
     <div class="result-row">
       <div class="result-card">
-        <div class="rc-label">Total trip cost</div>
+        <div class="rc-label">Total trip cost (C<sub>total</sub>)</div>
         <div class="rc-value" id="out-cost">—</div>
         <div class="rc-unit" id="out-cost-unit"></div>
       </div>
       <div class="result-card">
-        <div class="rc-label">Cost per km</div>
+        <div class="rc-label">Cost per km (C<sub>km</sub>)</div>
         <div class="rc-value" id="out-cpk">—</div>
         <div class="rc-unit" id="out-cpk-unit"></div>
       </div>
     </div>
 
+    <!-- Formula breakdown -->
     <div class="breakdown-card">
       <button class="breakdown-toggle" id="toggle-btn" onclick="toggleBreakdown()">
         <span>Formula breakdown</span>
@@ -337,32 +341,34 @@
       </button>
       <div class="breakdown-body" id="breakdown-body">
 
-        <div class="bd-group">Engine</div>
-        <div class="bd-row"><span class="bd-label">Generation</span>              <span class="bd-val hi" id="b-gen">—</span></div>
-        <div class="bd-row"><span class="bd-label">Peak brake thermal efficiency</span><span class="bd-val hi" id="b-bte">—</span></div>
-        <div class="bd-row"><span class="bd-label">Design base RON</span>         <span class="bd-val"    id="b-ronbase">92 RON</span></div>
-        <div class="bd-row"><span class="bd-label">RON sensitivity α</span>       <span class="bd-val"    id="b-alpha">—</span></div>
+        <div class="bd-group">Engine constants</div>
+        <div class="bd-row"><span class="bd-label">Generation</span>                          <span class="bd-val hi" id="b-gen">—</span></div>
+        <div class="bd-row"><span class="bd-label">Peak thermal efficiency (η)</span>          <span class="bd-val hi" id="b-eta">—</span></div>
+        <div class="bd-row"><span class="bd-label">Gasoline energy density</span>              <span class="bd-val">8.9 kWh/L</span></div>
+        <div class="bd-row"><span class="bd-label">RON base (design optimum)</span>            <span class="bd-val">95 RON</span></div>
+        <div class="bd-row"><span class="bd-label">RON sensitivity</span>                      <span class="bd-val">0.002 / RON</span></div>
 
-        <div class="bd-group">Fuel properties (input RON)</div>
-        <div class="bd-row"><span class="bd-label">RON entered (default 95)</span><span class="bd-val"    id="b-ron-entered">95 RON</span></div>
-        <div class="bd-row"><span class="bd-label">Energy density (LHV)</span>    <span class="bd-val hi" id="b-lhv">—</span></div>
-        <div class="bd-row"><span class="bd-label">Energy equiv. (1 kWh)</span>   <span class="bd-val">3.6 MJ</span></div>
+        <div class="bd-group">Step 1 — RON multiplier (M<sub>R</sub>)</div>
+        <div class="bd-row"><span class="bd-label">M<sub>R</sub> = 1 + (R − 95) × 0.002</span><span class="bd-val hi" id="b-mr">—</span></div>
 
-        <div class="bd-group">Fuel economy</div>
-        <div class="bd-row"><span class="bd-label">η_RON = 1 + α × (RON − 92)</span><span class="bd-val"    id="b-eta">—</span></div>
-        <div class="bd-row"><span class="bd-label">L_adj = L ÷ η_RON</span>       <span class="bd-val"    id="b-ladj">—</span></div>
-        <div class="bd-row"><span class="bd-label">L_elec = (E × 3.6) ÷ LHV</span><span class="bd-val"    id="b-lelec">—</span></div>
-        <div class="bd-row"><span class="bd-label">L_eq = L_adj + L_elec</span>   <span class="bd-val"    id="b-leq">—</span></div>
-        <div class="bd-row"><span class="bd-label">FE = D ÷ L_eq</span>           <span class="bd-val hi" id="b-fe">—</span></div>
+        <div class="bd-group">Step 2 — Battery equivalent fuel (F<sub>eq</sub>)</div>
+        <div class="bd-row"><span class="bd-label">η × M<sub>R</sub></span>                   <span class="bd-val" id="b-eta-mr">—</span></div>
+        <div class="bd-row"><span class="bd-label">F<sub>eq</sub> = E<sub>b</sub> ÷ (8.9 × η × M<sub>R</sub>)</span><span class="bd-val hi" id="b-feq">—</span></div>
 
-        <div class="bd-group">Cost</div>
-        <div class="bd-row"><span class="bd-label">Fuel cost = L × price/L</span>      <span class="bd-val"    id="b-cfuel">—</span></div>
-        <div class="bd-row"><span class="bd-label">Elec. cost = E × price/kWh</span>   <span class="bd-val"    id="b-celec">—</span></div>
-        <div class="bd-row"><span class="bd-label">Total cost</span>                   <span class="bd-val hi" id="b-ctotal">—</span></div>
+        <div class="bd-group">Step 3 — Combined fuel economy (E<sub>c</sub>)</div>
+        <div class="bd-row"><span class="bd-label">F<sub>v</sub> + F<sub>eq</sub></span>       <span class="bd-val" id="b-fsum">—</span></div>
+        <div class="bd-row"><span class="bd-label">E<sub>c</sub> = D ÷ (F<sub>v</sub> + F<sub>eq</sub>)</span><span class="bd-val hi" id="b-ec">—</span></div>
+
+        <div class="bd-group">Step 4 — Trip cost</div>
+        <div class="bd-row"><span class="bd-label">Fuel cost = F<sub>v</sub> × C<sub>f</sub></span>           <span class="bd-val" id="b-cfuel">—</span></div>
+        <div class="bd-row"><span class="bd-label">Elec. cost = E<sub>b</sub> × C<sub>e</sub></span>          <span class="bd-val" id="b-celec">—</span></div>
+        <div class="bd-row"><span class="bd-label">C<sub>total</sub> = fuel cost + elec. cost</span>           <span class="bd-val hi" id="b-ctotal">—</span></div>
+        <div class="bd-row"><span class="bd-label">C<sub>km</sub> = C<sub>total</sub> ÷ D</span>              <span class="bd-val hi" id="b-ckm">—</span></div>
 
         <div class="bd-note">
-          α per generation: 1st-gen 0.0030 · 5.0 0.0028 · 6.0 0.0025 (estimated — higher BTE leaves less RON headroom).<br>
-          LHV interpolated linearly: 31.8 MJ/L @ 91 RON → 32.6 MJ/L @ 100 RON.<br>
+          η per generation: 1st-gen 0.43 · DM-i 5.0 0.4606 · DM 6.0 0.48.<br>
+          Gasoline energy density: 8.9 kWh/L (standard approximation for 95 RON petrol).<br>
+          RON base 95, sensitivity 0.002/RON — higher octane improves knock resistance &amp; thermal efficiency.<br>
           BTE sources: <a href="https://www.businesswire.com/news/home/20201116005578/en/" target="_blank">BYD press release 2020</a> ·
           <a href="https://www.sae.org/publications/technical-papers/content/2021-01-1241/" target="_blank">SAE 2021-01-1241</a>
         </div>
@@ -373,10 +379,11 @@
 </div>
 
 <script>
+  // ── Generation data ────────────────────────────────────────────────────────
   const GENS = {
-    1: { label: 'DM-i 1st Gen', year: '2020', bte: '43%',    alpha: 0.0030 },
-    5: { label: 'DM-i 5.0',     year: '2024', bte: '46.06%', alpha: 0.0028 },
-    6: { label: 'DM 6.0',       year: '2025', bte: '>48%',   alpha: 0.0025 },
+    1: { label: 'DM-i 1st Gen', year: '2020', bteLabel: '43%',    eta: 0.4300 },
+    5: { label: 'DM-i 5.0',     year: '2024', bteLabel: '46.06%', eta: 0.4606 },
+    6: { label: 'DM 6.0',       year: '2025', bteLabel: '>48%',   eta: 0.4800 },
   };
   let gen = GENS[5];
 
@@ -387,25 +394,23 @@
     calc();
   }
 
-  // LHV linear interpolation: 31.8 MJ/L @ RON 91 → 32.6 MJ/L @ RON 100
-  function lhv(ron) {
-    const clamped = Math.min(Math.max(ron, 85), 110);
-    return 31.8 + (clamped - 91) * (32.6 - 31.8) / (100 - 91);
-  }
-
-  const $  = id => document.getElementById(id);
-  const fv = id => { const v = parseFloat($(id).value); return isNaN(v) ? 0 : v; };
+  // ── Helpers ────────────────────────────────────────────────────────────────
+  const $   = id => document.getElementById(id);
+  const fv  = id => { const v = parseFloat($(id).value); return isNaN(v) ? 0 : v; };
+  const fmt = (n, d) => n.toFixed(d ?? 3);
   const fmtMoney = (n, sym) =>
     sym + n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
+  // ── Main calculation ───────────────────────────────────────────────────────
   function calc() {
     const D   = fv('dist');
-    const ron = $('ron').value.trim() === '' ? 95 : (parseFloat($('ron').value) || 95);
-    const L   = fv('fuel');
-    const E   = fv('kwh');
-    const Pg  = fv('pgas');
-    const Pe  = fv('pelec');
+    const R   = $('ron').value.trim() === '' ? 95 : (parseFloat($('ron').value) || 95);
+    const Fv  = fv('fuel');
+    const Eb  = fv('kwh');
+    const Cf  = fv('pgas');
+    const Ce  = fv('pelec');
     const sym = $('currency').value.trim() || '₱';
+    const eta = gen.eta;
 
     // Sync currency prefixes
     $('pfx-gas').textContent  = sym;
@@ -413,47 +418,48 @@
 
     // RON warning
     const warn = $('ron-warn');
-    if (ron < 91)       { warn.textContent = '⚠ Below DM-i minimum (91 RON)'; warn.style.display = 'inline-block'; }
-    else if (ron > 100) { warn.textContent = '⚠ Above typical pump fuel';      warn.style.display = 'inline-block'; }
-    else                { warn.style.display = 'none'; }
+    if      (R < 91)  { warn.textContent = '⚠ Below DM-i minimum (91 RON)'; warn.style.display = 'inline-block'; }
+    else if (R > 100) { warn.textContent = '⚠ Above typical pump fuel';      warn.style.display = 'inline-block'; }
+    else              { warn.style.display = 'none'; }
 
-    const LHV   = lhv(ron);
-    const alpha = gen.alpha;
+    // ── Formula from image ────────────────────────────────────────────────
+    // Step 1: RON multiplier
+    const MR = 1 + (R - 95) * 0.002;
 
-    // Formula
-    const eta   = 1 + alpha * (ron - 92);
-    const Ladj  = L > 0 ? L / eta : 0;
-    const Lelec = (E * 3.6) / LHV;
-    const Leq   = Ladj + Lelec;
-    const FE    = (D > 0 && Leq > 0) ? D / Leq : null;
+    // Step 2: Battery equivalent fuel (liters)
+    const denom = 8.9 * eta * MR;
+    const Feq   = denom > 0 ? Eb / denom : 0;
 
-    const Cfuel  = L * Pg;
-    const Celec  = E * Pe;
+    // Step 3: Combined fuel economy
+    const Ftotal = Fv + Feq;
+    const Ec     = (D > 0 && Ftotal > 0) ? D / Ftotal : null;
+
+    // Step 4: Cost
+    const Cfuel  = Fv * Cf;
+    const Celec  = Eb * Ce;
     const Ctotal = Cfuel + Celec;
-    const Cpk    = D > 0 ? Ctotal / D : null;
+    const Ckm    = D > 0 ? Ctotal / D : null;
 
-    // Results
+    // ── Results ───────────────────────────────────────────────────────────
     $('gen-badge').textContent    = gen.label;
-    $('out-fe').textContent       = FE !== null ? FE.toFixed(1) : '—';
+    $('out-fe').textContent       = Ec !== null ? Ec.toFixed(1) : '—';
     $('out-cost').textContent     = fmtMoney(Ctotal, sym);
     $('out-cost-unit').textContent = sym;
-    $('out-cpk').textContent      = Cpk !== null ? Cpk.toFixed(2) : '—';
+    $('out-cpk').textContent      = Ckm !== null ? Ckm.toFixed(2) : '—';
     $('out-cpk-unit').textContent  = sym + ' / km';
 
-    // Breakdown
-    $('b-gen').textContent        = gen.label + ' (' + gen.year + ')';
-    $('b-bte').textContent        = gen.bte + ' BTE';
-    $('b-alpha').textContent      = alpha.toFixed(4) + ' / RON';
-    $('b-ron-entered').textContent = ron + ' RON';
-    $('b-lhv').textContent        = LHV.toFixed(3) + ' MJ/L';
-    $('b-eta').textContent        = eta.toFixed(5) + ' ×';
-    $('b-ladj').textContent       = Ladj > 0  ? Ladj.toFixed(3)  + ' L' : '0.000 L';
-    $('b-lelec').textContent      = Lelec > 0 ? Lelec.toFixed(3) + ' L' : '0.000 L';
-    $('b-leq').textContent        = Leq.toFixed(3) + ' L';
-    $('b-fe').textContent         = FE !== null ? FE.toFixed(3) + ' km/L' : 'N/A (no energy input)';
-    $('b-cfuel').textContent      = fmtMoney(Cfuel,  sym);
-    $('b-celec').textContent      = fmtMoney(Celec,  sym);
-    $('b-ctotal').textContent     = fmtMoney(Ctotal, sym);
+    // ── Breakdown ─────────────────────────────────────────────────────────
+    $('b-gen').textContent    = gen.label + ' (' + gen.year + ')';
+    $('b-eta').textContent    = gen.bteLabel + '  (η = ' + eta + ')';
+    $('b-mr').textContent     = MR.toFixed(5);
+    $('b-eta-mr').textContent = (eta * MR).toFixed(6);
+    $('b-feq').textContent    = fmt(Feq) + ' L';
+    $('b-fsum').textContent   = fmt(Ftotal) + ' L';
+    $('b-ec').textContent     = Ec !== null ? Ec.toFixed(3) + ' km/L' : 'N/A';
+    $('b-cfuel').textContent  = fmtMoney(Cfuel,  sym);
+    $('b-celec').textContent  = fmtMoney(Celec,  sym);
+    $('b-ctotal').textContent = fmtMoney(Ctotal, sym);
+    $('b-ckm').textContent    = Ckm !== null ? fmtMoney(Ckm, sym) + ' / km' : 'N/A';
   }
 
   function toggleBreakdown() {
@@ -466,5 +472,6 @@
 </body>
 </html>
 
-<!-- Author: Rex Torres -->
-<!-- Made with Claude AI -->
+<!-- BYD Combined Fuel Economy Calculator v3.0 -->
+<!-- Author: Rex M. Torres -->
+<!-- Made with Gemini for the formula and Claude AI for app -->
